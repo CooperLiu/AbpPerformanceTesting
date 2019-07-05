@@ -4,18 +4,15 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Boss.ClouldItems.EntityFrameworkCore;
-using Boss.ClouldItems.MultiTenancy;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
 using Volo.Abp;
-using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.Autofac;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
-using Volo.Abp.MultiTenancy;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
@@ -26,7 +23,6 @@ namespace Boss.ClouldItems
         typeof(ClouldItemsApplicationModule),
         typeof(ClouldItemsEntityFrameworkCoreModule),
         typeof(ClouldItemsHttpApiModule),
-        typeof(AbpAspNetCoreMultiTenancyModule),
         typeof(AbpAutofacModule),
         typeof(AbpEntityFrameworkCoreSqlServerModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
@@ -45,10 +41,10 @@ namespace Boss.ClouldItems
                 options.UseSqlServer();
             });
 
-            Configure<MultiTenancyOptions>(options =>
-            {
-                options.IsEnabled = MultiTenancyConsts.IsEnabled;
-            });
+            //Configure<MultiTenancyOptions>(options =>
+            //{
+            //    options.IsEnabled = MultiTenancyConsts.IsEnabled;
+            //});
 
             if (hostingEnvironment.IsDevelopment())
             {
@@ -112,10 +108,11 @@ namespace Boss.ClouldItems
             app.UseCorrelationId();
             app.UseVirtualFiles();
             app.UseAuthentication();
-            if (MultiTenancyConsts.IsEnabled)
-            {
-                app.UseMultiTenancy();
-            }
+            // remove multi-tenancy module
+            //if (MultiTenancyConsts.IsEnabled)
+            //{
+            //    app.UseMultiTenancy();
+            //}
             app.UseAbpRequestLocalization();
             app.UseSwagger();
             app.UseSwaggerUI(options =>
