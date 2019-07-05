@@ -40,17 +40,17 @@ namespace Boss.ClouldItems
                 options.UseSqlServer();
             });
 
-            Configure<AbpAuditingOptions>(options =>
-            {
-                options.ApplicationName = ClouldItemsConsts.HostApiName;
-                options.IsEnabled = false;
-                options.IsEnabledForAnonymousUsers = false;
-                options.IsEnabledForGetRequests = false;
+            //Configure<AbpAuditingOptions>(options =>
+            //{
+            //    options.ApplicationName = ClouldItemsConsts.HostApiName;
+            //    options.IsEnabled = false;
+            //    options.IsEnabledForAnonymousUsers = false;
+            //    options.IsEnabledForGetRequests = false;
 
-                // enable entity audit
-                //options.IgnoredTypes.Add(typeof(XXEntity));
-                //options.EntityHistorySelectors.AddAllEntities();
-            });
+            //    // enable entity audit
+            //    //options.IgnoredTypes.Add(typeof(XXEntity));
+            //    //options.EntityHistorySelectors.AddAllEntities();
+            //});
 
             //Configure<MultiTenancyOptions>(options =>
             //{
@@ -91,7 +91,7 @@ namespace Boss.ClouldItems
                 {
                     options.Authority = configuration["AuthServer:Authority"];
                     options.RequireHttpsMetadata = false;
-                    options.ApiName = "ClouldItems";
+                    options.ApiName = ClouldItemsConsts.HostApiName;
                 });
 
             context.Services.AddDistributedRedisCache(options =>
@@ -116,8 +116,8 @@ namespace Boss.ClouldItems
             {
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
-            app.UseCorrelationId();
+            //app.UseHttpsRedirection();
+            //app.UseCorrelationId();
             app.UseVirtualFiles();
             app.UseAuthentication();
             // remove multi-tenancy module
@@ -135,7 +135,7 @@ namespace Boss.ClouldItems
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
                 }); 
             }
-            app.UseAuditing();
+            //app.UseAuditing();
             app.UseMvcWithDefaultRouteAndArea();
         }
     }
