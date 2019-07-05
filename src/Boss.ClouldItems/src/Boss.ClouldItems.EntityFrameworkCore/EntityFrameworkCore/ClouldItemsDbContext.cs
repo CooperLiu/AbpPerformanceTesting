@@ -15,6 +15,8 @@ namespace Boss.ClouldItems.EntityFrameworkCore
          * public DbSet<Question> Questions { get; set; }
          */
 
+        public DbSet<Sku> Skus { get; set; }
+
         public ClouldItemsDbContext(DbContextOptions<ClouldItemsDbContext> options) 
             : base(options)
         {
