@@ -7,7 +7,7 @@ using Boss.ClouldItems.EntityFrameworkCore;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
 using Volo.Abp;
-using Volo.Abp.AuditLogging.EntityFrameworkCore;
+using Volo.Abp.Auditing;
 using Volo.Abp.Autofac;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
@@ -25,7 +25,6 @@ namespace Boss.ClouldItems
         typeof(ClouldItemsHttpApiModule),
         typeof(AbpAutofacModule),
         typeof(AbpEntityFrameworkCoreSqlServerModule),
-        typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule)
         )]
@@ -39,6 +38,18 @@ namespace Boss.ClouldItems
             Configure<AbpDbContextOptions>(options =>
             {
                 options.UseSqlServer();
+            });
+
+            Configure<AbpAuditingOptions>(options =>
+            {
+                options.ApplicationName = ClouldItemsConsts.HostApiName;
+                options.IsEnabled = false;
+                options.IsEnabledForAnonymousUsers = false;
+                options.IsEnabledForGetRequests = false;
+
+                // enable entity audit
+                //options.IgnoredTypes.Add(typeof(XXEntity));
+                //options.EntityHistorySelectors.AddAllEntities();
             });
 
             //Configure<MultiTenancyOptions>(options =>
