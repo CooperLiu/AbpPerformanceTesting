@@ -98,6 +98,7 @@ namespace Boss.ClouldItems
             context.Services.AddDistributedRedisCache(options =>
             {
                 options.Configuration = configuration["Redis:Configuration"];
+                options.InstanceName = configuration["Redis:InstanceName"];
             });
 
             if (!hostingEnvironment.IsDevelopment())

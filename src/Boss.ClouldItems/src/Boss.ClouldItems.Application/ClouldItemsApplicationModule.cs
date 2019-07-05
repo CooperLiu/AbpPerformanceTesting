@@ -1,4 +1,5 @@
 ﻿using Volo.Abp.AutoMapper;
+using Volo.Abp.Caching;
 using Volo.Abp.Modularity;
 
 namespace Boss.ClouldItems
@@ -6,7 +7,8 @@ namespace Boss.ClouldItems
     [DependsOn(
         typeof(ClouldItemsDomainModule),
         typeof(ClouldItemsApplicationContractsModule),
-        typeof(AbpAutoMapperModule)
+        typeof(AbpAutoMapperModule),
+        typeof(AbpCachingModule)
         )]
     public class ClouldItemsApplicationModule : AbpModule
     {

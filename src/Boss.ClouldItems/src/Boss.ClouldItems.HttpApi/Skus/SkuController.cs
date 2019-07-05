@@ -49,5 +49,12 @@ namespace Boss.ClouldItems.Skus
         {
             await _skuAppService.DeleteAsync(id);
         }
+
+        [HttpGet]
+        [Route("cache")]
+        public async Task<SkuQueryDto> GetCacheAsync(string code)
+        {
+          return  await _skuAppService.GetCacheAsync(code);
+        }
     }
 }
