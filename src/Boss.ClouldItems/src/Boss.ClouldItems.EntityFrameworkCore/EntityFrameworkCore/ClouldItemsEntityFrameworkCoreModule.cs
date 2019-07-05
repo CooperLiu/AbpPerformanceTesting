@@ -17,6 +17,7 @@ namespace Boss.ClouldItems.EntityFrameworkCore
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */
+                options.AddRepository<Sku, EfCoreSkuRepository>();
             });
         }
     }

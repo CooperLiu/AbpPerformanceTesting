@@ -7,14 +7,15 @@ using Boss.ClouldItems.EntityFrameworkCore;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
 using Volo.Abp;
-using Volo.Abp.Auditing;
 using Volo.Abp.Autofac;
+using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
+using Volo.Abp.Threading;
 using Volo.Abp.VirtualFileSystem;
 
 namespace Boss.ClouldItems
@@ -137,6 +138,21 @@ namespace Boss.ClouldItems
             }
             //app.UseAuditing();
             app.UseMvcWithDefaultRouteAndArea();
+
+            SeedData(context);
+        }
+
+        private void SeedData(ApplicationInitializationContext context)
+        {
+            AsyncHelper.RunSync(async () =>
+            {
+                using (var scope = context.ServiceProvider.CreateScope())
+                {
+                    await scope.ServiceProvider
+                        .GetRequiredService<IDataSeeder>()
+                        .SeedAsync();
+                }
+            });
         }
     }
 }

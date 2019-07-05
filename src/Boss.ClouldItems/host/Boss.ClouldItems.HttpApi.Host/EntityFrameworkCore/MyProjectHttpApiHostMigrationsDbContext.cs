@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.PermissionManagement.EntityFrameworkCore;
+using Volo.Abp.SettingManagement.EntityFrameworkCore;
 
 namespace Boss.ClouldItems.EntityFrameworkCore
 {
@@ -15,6 +17,8 @@ namespace Boss.ClouldItems.EntityFrameworkCore
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.ConfigureSettingManagement();
+            modelBuilder.ConfigurePermissionManagement();
             modelBuilder.ConfigureClouldItems();
         }
     }
