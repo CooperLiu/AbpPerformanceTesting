@@ -67,15 +67,16 @@ namespace Boss.ClouldItems
                     options.FileSets.ReplaceEmbeddedByPhysical<ClouldItemsApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Boss.ClouldItems.Application", Path.DirectorySeparatorChar)));
                 });
             }
-
-            context.Services.AddSwaggerGen(
+            if (hostingEnvironment.IsDevelopment())
+            {
+                context.Services.AddSwaggerGen(
                 options =>
                 {
                     options.SwaggerDoc("v1", new Info { Title = "ClouldItems API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
                     options.CustomSchemaIds(type => type.FullName);
                 });
-
+            }
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Languages.Add(new LanguageInfo("cs", "cs", "Čeština"));
@@ -125,11 +126,15 @@ namespace Boss.ClouldItems
             //    app.UseMultiTenancy();
             //}
             app.UseAbpRequestLocalization();
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
+
+            if (context.GetEnvironment().IsDevelopment())
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
-            });
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
+                }); 
+            }
             app.UseAuditing();
             app.UseMvcWithDefaultRouteAndArea();
         }

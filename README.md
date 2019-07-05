@@ -51,4 +51,7 @@ Abp默认全特性MVC模板项目（AbpMvcFullFeature） - **Boss.OrderCenter**
 Abp性能优化MVC模板项目（AbpMvcHighPerformace）- **Boss.ClouldItems**
 
 **优化项**
-1. 
+1. 移除多租户模块。
+2. 移除审计日志Db持久化组件，并关闭默认审计
+3. 关闭Production下，swagger加载
+4. 关闭Volo.Abp.AspNetCore.Tracing middleware
