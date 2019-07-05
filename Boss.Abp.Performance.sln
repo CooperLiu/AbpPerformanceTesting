@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.AbpMvcPipeline-vs-AspNetMvcPipeline", "01.AbpMvcPipeline-vs-AspNetMvcPipeline", "{EEC8A8E3-66B9-4CE3-9D71-9DDD9001D8F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.AbpMvcDynamaicApi-vs-AbpMvcApi", "02.AbpMvcDynamaicApi-vs-AbpMvcApi", "{5A625D30-26C0-4D64-8CEB-18C1BCBA3904}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.AbpMvcFullFeature-vs-AbpMvcHighPerformace", "03.AbpMvcFullFeature-vs-AbpMvcHighPerformace", "{D9CF6CEC-D14D-471E-8211-EA7E87C73DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWebAppHost", "src\AspNetCoreWebAppHost\AspNetCoreWebAppHost.csproj", "{3A7DEC26-2FAB-4B83-A615-F629372D0A6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbpWebAppHost", "src\AbpWebAppHost\AbpWebAppHost.csproj", "{6AD75D3C-B1BB-4C94-B711-9862517AD481}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A7DEC26-2FAB-4B83-A615-F629372D0A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A7DEC26-2FAB-4B83-A615-F629372D0A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A7DEC26-2FAB-4B83-A615-F629372D0A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A7DEC26-2FAB-4B83-A615-F629372D0A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD75D3C-B1BB-4C94-B711-9862517AD481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD75D3C-B1BB-4C94-B711-9862517AD481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD75D3C-B1BB-4C94-B711-9862517AD481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD75D3C-B1BB-4C94-B711-9862517AD481}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A7DEC26-2FAB-4B83-A615-F629372D0A6F} = {EEC8A8E3-66B9-4CE3-9D71-9DDD9001D8F5}
+		{6AD75D3C-B1BB-4C94-B711-9862517AD481} = {EEC8A8E3-66B9-4CE3-9D71-9DDD9001D8F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C5BA054-1314-43FB-978A-FC91FE59AD60}
+	EndGlobalSection
+EndGlobal
