@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>Boss.OrderCenter</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.1" />
+    <PackageReference Include="Mongo2Go" Version="2.2.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Boss.OrderCenter.MongoDB\Boss.OrderCenter.MongoDB.csproj" />
+    <ProjectReference Include="..\Boss.OrderCenter.TestBase\Boss.OrderCenter.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>
