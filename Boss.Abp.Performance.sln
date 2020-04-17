@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.AbpMvcPipeline-vs-AspNetMvcPipeline", "01.AbpMvcPipeline-vs-AspNetMvcPipeline", "{EEC8A8E3-66B9-4CE3-9D71-9DDD9001D8F5}"
 EndProject
@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.AbpMvcDynamaicApi-vs-Abp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.AbpMvcFullFeature-vs-AbpMvcHighPerformace", "03.AbpMvcFullFeature-vs-AbpMvcHighPerformace", "{D9CF6CEC-D14D-471E-8211-EA7E87C73DE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWebAppHost", "src\AspNetCoreWebAppHost\AspNetCoreWebAppHost.csproj", "{3A7DEC26-2FAB-4B83-A615-F629372D0A6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreWebAppHost", "src\AspNetCoreWebAppHost\AspNetCoreWebAppHost.csproj", "{3A7DEC26-2FAB-4B83-A615-F629372D0A6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbpWebAppHost", "src\AbpWebAppHost\AbpWebAppHost.csproj", "{6AD75D3C-B1BB-4C94-B711-9862517AD481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbpWebAppHost", "src\AbpWebAppHost\AbpWebAppHost.csproj", "{6AD75D3C-B1BB-4C94-B711-9862517AD481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boss.AbpWebApi.Application", "src\Boss.AbpWebApi.Application\Boss.AbpWebApi.Application.csproj", "{934A82AB-79E6-4D2B-A480-FFE93104AB19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boss.AbpWebApi.Application", "src\Boss.AbpWebApi.Application\Boss.AbpWebApi.Application.csproj", "{934A82AB-79E6-4D2B-A480-FFE93104AB19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boss.AbpWebApi.Host", "src\Boss.AbpWebApi.Host\Boss.AbpWebApi.Host.csproj", "{126445DA-6D81-40CE-A7D4-11980E5E609B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boss.AbpWebApi.Host", "src\Boss.AbpWebApi.Host\Boss.AbpWebApi.Host.csproj", "{126445DA-6D81-40CE-A7D4-11980E5E609B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boss.AbpWebApi.Application.Contracts", "src\Boss.AbpWebApi.Application.Contracts\Boss.AbpWebApi.Application.Contracts.csproj", "{7946AEE8-A3A0-4F3B-9234-2D2541A68441}"
 EndProject
@@ -66,6 +66,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boss.ClouldItems.HttpApi", "src\Boss.ClouldItems\src\Boss.ClouldItems.HttpApi\Boss.ClouldItems.HttpApi.csproj", "{34A04D22-0626-4CCD-A04C-8AA4AC8DD439}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boss.ClouldItems.HttpApi.Client", "src\Boss.ClouldItems\src\Boss.ClouldItems.HttpApi.Client\Boss.ClouldItems.HttpApi.Client.csproj", "{9E61BA70-6A41-40F2-94B7-3B5A54CD6313}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.abp-vs-dotnetcore", "04.abp-vs-dotnetcore", "{16CF2B29-7057-45AF-A70D-E47A7605126C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDotnetCoreWeb", "src\TestingDotnetCoreWeb\TestingDotnetCoreWeb.csproj", "{98B72B2D-FEB7-40E6-AF01-C349472681A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingAbpWeb", "src\TestingAbpWeb\TestingAbpWeb.csproj", "{2A713D76-289B-4F04-BF1A-B5E4BBB82985}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +171,14 @@ Global
 		{9E61BA70-6A41-40F2-94B7-3B5A54CD6313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E61BA70-6A41-40F2-94B7-3B5A54CD6313}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E61BA70-6A41-40F2-94B7-3B5A54CD6313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B72B2D-FEB7-40E6-AF01-C349472681A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B72B2D-FEB7-40E6-AF01-C349472681A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B72B2D-FEB7-40E6-AF01-C349472681A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B72B2D-FEB7-40E6-AF01-C349472681A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A713D76-289B-4F04-BF1A-B5E4BBB82985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A713D76-289B-4F04-BF1A-B5E4BBB82985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A713D76-289B-4F04-BF1A-B5E4BBB82985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A713D76-289B-4F04-BF1A-B5E4BBB82985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -199,6 +213,8 @@ Global
 		{1DD7960A-947F-4287-9949-4A3BC1F98298} = {DF6E110B-B1F0-462E-92EC-A71238DE0EA5}
 		{34A04D22-0626-4CCD-A04C-8AA4AC8DD439} = {DF6E110B-B1F0-462E-92EC-A71238DE0EA5}
 		{9E61BA70-6A41-40F2-94B7-3B5A54CD6313} = {DF6E110B-B1F0-462E-92EC-A71238DE0EA5}
+		{98B72B2D-FEB7-40E6-AF01-C349472681A6} = {16CF2B29-7057-45AF-A70D-E47A7605126C}
+		{2A713D76-289B-4F04-BF1A-B5E4BBB82985} = {16CF2B29-7057-45AF-A70D-E47A7605126C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C5BA054-1314-43FB-978A-FC91FE59AD60}
